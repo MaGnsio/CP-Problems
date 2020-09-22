@@ -6,5 +6,5 @@
 * [CODECHEF](https://www.codechef.com/)
 * [AtCoder](https://atcoder.jp/)
 * [LeetCode](https://leetcode.com/)
-* [**CLIST**](https://clist.by/)
+* [CLIST](https://clist.by/)
 ***
