@@ -1,0 +1,271 @@
+## One Year of CP:
+----
+
+</br>
+
+### Timeline:
+
+- **AIC lvl 1**
+
+	- ~~Basics.~~
+		- ~~Overflow.~~
+		- ~~Type Casting.~~
+		- ~~TLE / MLE.~~
+		- ~~(Complexity Analysis) Big O Notation.~~
+		- ~~Struct.~~
+		- ~~Compare Function, Functor, and Lambda Expression.~~
+	- ~~Preprocessing Techniques.~~
+		- ~~Frequency Array.~~
+		- ~~Prefix Sum.~~
+		- ~~Partial Sum.~~
+	- ~~Strings.~~
+		- ~~String Member Functions.~~
+	- ~~STL.~~
+		- ~~Algorithms.~~
+		- ~~Containers.~~
+		- ~~Functions.~~
+		- ~~Iterators.~~
+	- ~~Number Theory.~~
+		- ~~Prime Numbers / Composite Numbers.~~
+			- ~~Prime Factorization.~~
+			- ~~Primality Test.~~
+				- ~~Sieve of Eratosthenes.~~
+		- ~~Divisibility Rules.~~
+		- ~~Modular Arithmetic.~~
+		- ~~GCD.~~
+		- ~~LCM.~~
+	- ~~Binary Search.~~
+	- ~~Two Pointers Technique.~~
+----
+- **AIC lvl 2**
+
+	- ~~Counting Rules.~~
+		- ~~Product Rule.~~
+		- ~~Sum Rule.~~
+		- ~~Inclusion-Exclusion Principle.~~
+		- ~~Division Rule.~~
+	- ~~Combinations and Permutations.~~
+	- ~~Arithmetic and Geometric Progressions.~~
+	- ~~Basic Operations on Matrices.~~
+	- ~~Factorials.~~
+		- ~~Count Digits in a Factorial.~~
+		- ~~Count Trailing Zeroes in Factorial.~~
+	- ~~Fibonacci Series.~~
+		- ~~Find Index of Given Fibonacci Number in Constant Time.~~
+		- ~~Fibonacci Number modulo M and Pisano Period.~~
+	- ~~Big Integers.~~
+	- ~~Logarithms.~~
+	- ~~Number Systems.~~
+	- ~~Bitwise Operations.~~
+	- ~~Geometry Basics.~~
+		- ~~Check If a Triangle of Positive Area is Possible With The Given Angles.~~
+	- ~~Greedy Technique.~~
+	- ~~Number Theory.~~
+		- ~~Integer Factorization.~~
+		- ~~Counting Divisors.~~
+		- ~~Euclidean Algorithm.~~
+		- ~~Extended Euclidean Algorithm.~~
+		- ~~Binary Exponentiation.~~
+		- ~~Binary Multiplication.~~
+		- ~~Modular Multiplicative Inverse.~~
+			- ~~Fermat's little theorem.~~
+	- ~~Bit Manipulation.~~
+	- ~~Bit Masks / Submasks.~~
+	- ~~Bit Set.~~
+	- ~~Recursion.~~
+	- ~~Back Tracking.~~
+	- ~~Complete Search Technique.~~
+----
+- **Post AIC lvl 2**
+
+	- ~~Graph Terminologies.~~
+	  - ~~Nodes.~~
+	  - ~~Edges.~~
+	  - ~~Directed / Undirected.~~
+	  - ~~Weighted / Unweighted.~~
+	  - ~~Connected/Disconnected.~~
+	  - ~~Cyclic / Acyclic.~~
+	  - ~~Adjacency.~~
+	  - ~~Multigraph.~~
+	  - ~~Self-loop.~~
+	  - ~~Simple graph.~~
+	  - ~~Implicit / Explicit.~~
+	  - ~~Regular / Complete.~~
+	  - ~~Sparse / Dense.~~
+	  - ~~Bipartite (even and odd cycles).~~
+	  - ~~Tree.~~
+	  - ~~DAG.~~
+	  - ~~In/Out Degree.~~
+	- ~~Graph Representation~~
+	  - ~~Edge List.~~
+	  - ~~Adjacency Matrix.~~
+	  - ~~Adjacency List.~~
+		- ~~Array of vectors implementation.~~
+		- ~~Linked-List-like implementation.~~
+	- ~~DFS.~~
+	- ~~Cycles Detection.~~
+	- ~~Number of Connected Components.~~
+	- ~~Connectivity.~~
+	- ~~Flood Fill.~~
+	- ~~Bridges.~~
+	- ~~Articulation Points.~~
+	- ~~Strongly Connected Components.~~
+	- ~~Strong Orientation.~~
+	- ~~Topological Sorting.~~
+	- ~~Tree Diameter (Longest Path on Tree).~~
+	- ~~Vertex Cover.~~
+	- ~~Bipartite Graph.~~
+	- ~~BFS.~~
+	- ~~Euler Tour / Path.~~
+	- ~~Single-source shortest paths *SSSP*.~~
+	  - ~~0-1 BFS.~~
+	  - ~~Dijkstra.~~
+	  - ~~Bellman-Ford.~~
+	- ~~All-pairs shortest paths *APSP*.~~
+	  - ~~Floyd-Warshall.~~
+	- ~~Finding a negative cycle in the graph.~~
+	- ~~Disjoint Set Union (DSU).~~
+	- Minimum Spanning Tree (MST).~~
+		- ~~Kruskal's Algorithm.~~
+		- ~~Prim's Algorithm.~~
+	- ~~Segment Tree.~~
+----
+
+</br>
+
+### Category:
+ - **Basics :-**
+ 
+	- Complexity Analysis (Big O Notation).
+	- TLE / MLE.
+	- Overflow.
+	- Type Casting.
+----
+- **Tibs :-**
+	- Compare Function, Functor, and Lambda Expression.
+	- Struct (For Templates).
+----
+- **Misc :-**
+	- Preprocessing Techniques :
+		- Frequency Array.
+		- Prefix Sum.
+		- Partial Sum.
+	-  STL :
+		- Algorithms.
+		- Containers.
+		- Functions.
+		- Iterators.
+	- Two Pointers Technique (Sliding Window).
+	- Big Integers.
+	- Recursion & Backtracking.
+----
+- **Data Structure :-**
+	- String :
+		- String Member Functions.
+	- **STL DATA STRUCTURES**.
+	- Disjoint Set Union (DSU).
+	- Segment Tree.
+----
+- **Math :-**
+	- Number Theory :
+		- Prime Numbers / Composite Numbers.
+		- Prime Factorization.
+		- Primality Test.
+		- Sieve of Eratosthenes.
+		- Divisibility Rules.
+		- Modular Arithmetic.
+		- GCD.
+		- LCM.
+		- Counting Principles :
+			- Sum Rule.
+			- Product Rule.
+			- Division Rule.	
+		- Inclusion-Exclusion Principle.	
+		- Combinations and Permutations.
+		- Factorials.
+			- Count Digits in a Factorial.
+			- Count Trailing Zeroes in Factorial.
+		- Fibonacci Series.
+			- Find Index of Given Fibonacci Number in Constant Time.
+			- Fibonacci Number modulo M and Pisano Period.
+		- Integer Factorization.
+		- Counting Divisors.
+		- Euclidean Algorithm.
+		- Extended Euclidean Algorithm.
+		- Binary Exponentiation.
+		- Binary Multiplication.
+		- Modular Multiplicative Inverse.
+			- Fermat's little theorem.
+	- Algebra :
+		- Arithmetic and Geometric Progressions.
+		- Matrices.
+	- Logarithms.
+	- Number Systems.
+	- Geometry :
+		- Geometry Basics.
+			- Check If a Triangle of Positive Area is Possible With The Given Angles.
+----
+- **Problem Solving Paradigms :-**
+	- Divide & Conquer :
+		- Binary Search.
+	- Greedy.
+	- Complete Search.
+	- Dynamic Programming.
+----
+- **Bits :-**
+	- Bitwise Operations.
+	- Bit Manipulation.
+	- Bit Masks / Submasks.
+	- Bit Set.
+----
+- **Graph :-**
+	- Graph Terminologies.
+	  - Nodes.
+	  - Edges.
+	  - Directed / Undirected.
+	  - Weighted / Unweighted.
+	  - Connected/Disconnected.
+	  - Cyclic / Acyclic.
+	  - Adjacency.
+	  - Multigraph.
+	  - Self-loop.
+	  - Simple graph.
+	  - Implicit / Explicit.
+	  - Regular / Complete.
+	  - Sparse / Dense.
+	  - Bipartite (even and odd cycles).
+	  - Tree.
+	  - DAG.
+	  - In/Out Degree.
+	- Graph Representation
+	  - Edge List.
+	  - Adjacency Matrix.
+	  - Adjacency List.
+		- Array of vectors implementation.
+		- Linked-List-like implementation.
+	- DFS.
+	- Cycles Detection.
+	- Number of Connected Components.
+	- Connectivity.
+	- Flood Fill.
+	- Bridges.
+	- Articulation Points.
+	- Strongly Connected Components.
+	- Strong Orientation.
+	- Topological Sorting.
+	- Tree Diameter (Longest Path on Tree).
+	- Vertex Cover.
+	- Bipartite Graph.
+	- BFS.
+	- Euler Tour / Path.
+	- Single-source shortest paths *SSSP*.
+	  - 0-1 BFS.
+	  - Dijkstra.
+	  - Bellman-Ford.
+	- All-pairs shortest paths *APSP*.
+	  - Floyd-Warshall.
+	- Finding a negative cycle in the graph.
+	- Minimum Spanning Tree (MST).
+		- Kruskal's Algorithm.
+		- Prim's Algorithm.
+----
