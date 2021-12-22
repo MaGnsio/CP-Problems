@@ -35,7 +35,7 @@ struct DSU {
             swap(Px, Py);
         }
         parent[Py] = Px;
-        length[Px] += Py;
+        length[Px] += length[Py];
     }
     void rank_unite(int x, int y) {
         int a = find(x);

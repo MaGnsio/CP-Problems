@@ -1,17 +1,12 @@
-template <typename T>
-T C(T n, T k) {
-    if (k > n - k) {
-        k = n - k;
-    }
-    T res = 1;
-    for (T i = k + 1; i <= n; ++i) {
-        T d = (i - k);
-        T q = i / d;
-        T r = i - q * d;
-        res = res * q + res * r / d;
-    }
-    return res;
-}
+/**
+ *    author:  MaGnsi0
+ *    created: 29.10.2021 15:33:58
+**/
+#include <bits/stdc++.h>
+
+using namespace std;
+
+const long long MOD = 1e9 + 7;
 
 template <typename T>
 T power(T b, T p, T m) {
@@ -41,7 +36,7 @@ vector<T> mod_factorials(T n, T m){
     return f;
 }
 
-//vector<T> f = mod_factorials(n, m);
+vector<long long> f = mod_factorials(1000000LL, MOD);
 
 template <typename T>
 vector<T> inverse_mod_factorials(T n, T m){
@@ -52,7 +47,7 @@ vector<T> inverse_mod_factorials(T n, T m){
     return inv_f;
 }
 
-//vector<T> inv_f = inverse_mod_factorials(n, m);
+vector<long long> inv_f = inverse_mod_factorials(1000000LL, MOD);
 
 template <typename T>
 T C_mod(T n, T k, T m) {
@@ -62,7 +57,28 @@ T C_mod(T n, T k, T m) {
     return (f[n] * inv_f[k] % m * inv_f[n - k] % m) % m;
 }
 
-template <typename T>
-T P_mod(T n, T k, T m) {
-    return (f[n] * inv_f[n - k]) % m;
+int main() {
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    int n;
+    cin >> n;
+    map<int, long long> mp;
+    for (int i = 0; i < n; ++i) {
+        int x;
+        cin >> x;
+        for (int i = 2; i * i <= x; ++i) {
+            while (x % i == 0) {
+                x /= i;
+                mp[i]++;
+            }
+        }
+        if (x > 1) {
+            mp[x]++;
+        }
+    }
+    long long res = 1;
+    for (auto& [x, y] : mp) {
+        res *= C_mod<long long>(y + n - 1, n - 1, MOD);
+        res %= MOD;
+    }
+    cout << res;
 }
