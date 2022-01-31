@@ -183,7 +183,7 @@ void all_possible_top_sort() {
 /*
  *  euler path exists if:
  *      - undirected graph: start and end nodes have odd degress and all other nodes have even degrees.
- *      - directed graph: start node have on extra out_degree, end node have one extra in_degree, and all other nodes have in_degree = out_degree.
+ *      - directed graph: start node have one extra out_degree, end node have one extra in_degree, and all other nodes have in_degree = out_degree.
  *  euler cycle exists if:
  *      - undirected graph: all nodes have even degrees.
  *      - directed graph: in_degree = out_degree for every node.
