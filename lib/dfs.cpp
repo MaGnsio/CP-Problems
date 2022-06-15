@@ -303,7 +303,7 @@ void dfs8(int v, int par = -1) {
             dfs8(u, v);
             low[v] = min(low[v], low[u]);
             if (in[v] <= low[u] && par != -1) { //no back edge from v ancestors to u or its descendants (notice if the back edge connects v itself, it doesn't matter
-                //cut point
+                //cut vertex 
                 //do something
             }
             childs++;
