@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int maxN = 1e5 + 5, maxM = maxN * (maxN - 1); //those numbers are hypothetical and may not apply on the real algorithm
+int maxN = 1e5 + 5, maxM = maxN * (maxN - 1); //those constraints are hypothetical and may not apply on the real algorithm
 int cycle_begin = -1, cycle_end = -1;
 
 vector<vector<int>> adj(maxN), adjT(maxN);

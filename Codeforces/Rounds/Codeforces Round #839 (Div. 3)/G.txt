@@ -1,0 +1,22 @@
+* is the score changing monotonically? NO => ∴we can't bs.
+
+* monocarp always play in cycle (A_0, A_1, ..., A_n, A_0, ...)
+  and A is sorted in increasing order.
+
+* the ans is some no. of cycles + some prefix of A.
+
+* can we find this no. of cycles somehow?
+
+* at first you win some k <= n match and lose n - k ones adding to
+  your score 2k + n.
+
+* if 2k + n <= 0 then we can't reach y otherwise we can
+  - because the added value will not ever decrease it either
+    stays the same or increases.
+
+         (for now we only know if the ans is -1 or not)
+
+* now if monocarp wins k at the starting x.
+  we can calculate how much he needs to win k + 1, k + 2, . . ., n.
+  we have not forget to calculate if he already reached y before he
+  is able to win versus all n opponent.
