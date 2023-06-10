@@ -1,6 +1,6 @@
 /**
  *    author:  MaGnsi0
- *    created: 26.05.2022 16:02:18
+ *    created: 04.05.2023 17:37:55
 **/
 #include <bits/stdc++.h>
 
@@ -13,13 +13,11 @@ int main() {
     while (T--) {
         string s;
         cin >> s;
-        int ans = (int)s.size();
-        for (int i = 0; i < (int)s.size(); ++i) {
-            if (s[i] == 'D') {
-                ans = i;
-                break;
-            }
+        int ans = (s[0] == '_') + (s.back() == '_');
+        for (int i = 0; i + 1 < (int)s.size(); ++i) {
+            ans += (s[i] == s[i + 1]) && (s[i] == '_');
         }
+        if ((int)s.size() == 1 && s[0] == '^') { ans++; }
         cout << ans << "\n";
     }
 }
