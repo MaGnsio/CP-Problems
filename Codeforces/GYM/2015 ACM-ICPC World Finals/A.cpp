@@ -1,33 +1,26 @@
 /**
  *    author:  MaGnsi0
- *    created: 22.09.2022 20:40:00
+ *    created: 09.09.2023 11:02:55
 **/
 #include <bits/stdc++.h>
 
 using namespace std;
 
-const double PI = acos(-1);
-
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    long double p, a, b, c, d;
-    int n;
-    cin >> p >> a >> b >> c >> d >> n;
-    function<long double(long double)> F = [&](long double k) {
-        long double ans = p * (sin(a * k + b) + cos(c * k + d) + 2.0);
-        return ans;
+    int p; cin >> p;
+    int a; cin >> a;
+    int b; cin >> b;
+    int c; cin >> c;
+    int d; cin >> d;
+    int n; cin >> n;
+    function<double(int)> price = [&](int k) {
+        return p * (sin(a * k + b) + cos(c * k + d) + 2);
     };
-    vector<long double> price(n);
-    for (int i = 1; i <= n; ++i) {
-        price[i - 1] = F(i);
+    double ans = 0.0, maxp = 0.0;
+    for (int k = 1; k <= n; ++k) {
+        ans = max(ans, maxp - price(k));
+        maxp = max(maxp, price(k));
     }
-    long double ans = 0.0, cur_max = price[0];
-    for (int i = 1; i < n; ++i) {
-        if (isless(cur_max, price[i])) {
-            cur_max = price[i];
-        } else {
-            ans = max(ans, cur_max - price[i]);
-        }
-    }
-    cout << fixed << setprecision(9) << ans;
+    cout << fixed << setprecision(8) << ans;
 }

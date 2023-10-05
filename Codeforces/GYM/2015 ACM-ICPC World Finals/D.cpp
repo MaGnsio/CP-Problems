@@ -19,7 +19,7 @@ int32_t main() {
             if (z[i] + r[i] <= h) {
                 area -= (4.0 / 3) * PI * r[i] * r[i] * r[i];
             } else if (h <= z[i] + r[i] && h >= z[i] - r[i]) {
-                double hh= h - (z[i] - r[i]);
+                double hh = h - (z[i] - r[i]);
                 double rr = r[i];
                 area -= (1.0 / 3) * PI * hh * hh * (3 * rr - hh);
             }
