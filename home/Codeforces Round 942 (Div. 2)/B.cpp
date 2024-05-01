@@ -8,14 +8,6 @@ using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    //uud => ud
-    //dud => uu
-    //duu => ud
-    //ud  => d
-    //uu  => u
-    //du  => d
-    //ud  => u
-    //uuu => dd
     int T; cin >> T;
     while (T--) {
         int n; cin >> n;
