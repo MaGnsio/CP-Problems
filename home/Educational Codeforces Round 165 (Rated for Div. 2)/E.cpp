@@ -1,6 +1,6 @@
 /**
  *    author:  MaGnsi0
- *    created: 29.04.2024 18:59:14
+ *    created: 13.05.2024 15:46:46
 **/
 #include <bits/stdc++.h>
 
@@ -54,86 +54,21 @@ int main() {
             return min(query_(2 * j + 1, low, mid, from, to), query_(2 * j + 2, mid + 1, high, from, to));
         };
         function<int(int, int)> query = [&](int from, int to) {
+            if (from > to) { return OO; }
             return query_(0, 0, n - 1, from, to);
         };
         update(0, n - 1, -OO);
-        for (int i = 0; i < n; ++i) {
-            if ((int)mp[i].size() >= 2) {
-                int j = mp[i][mp[i].size() - 2];
-                update(j, n - 1, -1);
-            }
-            if ((int)mp[i].size() >= 1) {
-                int j = mp[i][mp[i].size() - 1];
-                update(j, n - 1, 1);
-            }
-        }
         int ans = 0;
-        function<void(int)> solve = [&](int i) {
-            if (i == n) { return; }
-            int low = i, high = n - 1, bad = -1;
-            while (low <= high) {
-                int mid = (low + high) / 2;
-                if (query(i, mid) == 0) {
-                    bad = mid;
-                    high = mid - 1;
-                } else {
-                    low = mid + 1;
-                }
-            }
-            if (bad == -1 || ((a[bad] == a[i]) && (bad != i + 1))) {
-                if ((int)mp[a[i]].size() >= 2) {
-                    int j = mp[a[i]][mp[a[i]].size() - 2];
-                    update(j, n - 1, 1);
-                }
-                if ((int)mp[a[i]].size() >= 1) {
-                    int j = mp[a[i]][mp[a[i]].size() - 1];
-                    update(j, n - 1, -1);
-                }
-                assert(mp[a[i]].back() == i);
-                mp[a[i]].pop_back();
-                if ((int)mp[a[i]].size() >= 2) {
-                    int j = mp[a[i]][mp[a[i]].size() - 2];
-                    update(j, n - 1, -1);
-                }
-                if ((int)mp[a[i]].size() >= 1) {
-                    int j = mp[a[i]][mp[a[i]].size() - 1];
-                    update(j, n - 1, 1);
-                }
-                solve(i + 1);
-                return;
-            }
-            ans++;
-            set<int> updates;
-            for (int k = i; k <= bad; ++k) {
-                updates.insert(a[k]);
-            }
-            for (int x : updates) {
-                if ((int)mp[x].size() >= 2) {
-                    int j = mp[x][mp[x].size() - 2];
-                    update(j, n - 1, 1);
-                }
-                if ((int)mp[x].size() >= 1) {
-                    int j = mp[x][mp[x].size() - 1];
-                    update(j, n - 1, -1);
-                }
-            }
-            for (int k = i; k <= bad; ++k) {
-                assert(mp[a[k]].back() == k);
-                mp[a[k]].pop_back();
-            }
-            for (int x : updates) {
-                if ((int)mp[x].size() >= 2) {
-                    int j = mp[x][mp[x].size() - 2];
-                    update(j, n - 1, -1);
-                }
-                if ((int)mp[x].size() >= 1) {
-                    int j = mp[x][mp[x].size() - 1];
-                    update(j, n - 1, 1);
-                }
-            }
-            solve(bad + 1);
-        };
-        solve(0);
+        map<int, vector<int>> pos;
+        for (int i = 0, bad = 0; i < n; ++i) {
+            int x = a[i];
+            pos[x].push_back(i);
+            int m = (int)pos[x].size();
+            if (m > 0) { update(bad, pos[x][m - 1], +1); }
+            if (m > 1) { update(bad, pos[x][m - 2], -2); }
+            if (m > 2) { update(bad, pos[x][m - 3], +1); }
+            if (query(bad, i) == 0) { bad = i + 1, ans++; }
+        }
         cout << ans << "\n";
     }
 }
