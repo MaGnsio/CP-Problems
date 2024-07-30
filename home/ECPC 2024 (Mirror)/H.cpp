@@ -49,9 +49,16 @@ xor_basis F(xor_basis basisA, xor_basis basisB) {
 
 xor_basis G(xor_basis basisA, int x) {
     xor_basis basisB;
-    basisB.basis = basisA.basis;
-    for (int b = 0; b < B; ++b) {
-        basisB.basis[b] &= x;
+    for (int& base : basisA.basis) {
+        base &= x;
+        for (int b = B - 1; b >= 0; --b) {
+            if (!(base >> b & 1)) { continue; }
+            if (!basisB.basis[b]) {
+                basisB.basis[b] = base;
+                break;
+            }
+            base ^= basisB.basis[b];
+        }
     }
     return basisB;
 }
