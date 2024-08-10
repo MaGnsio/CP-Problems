@@ -28,7 +28,7 @@ int main() {
             }
             Y[k - 1] = k * y;
         } else {
-            X[k - 2] = k, X[k - 1] = k * (y - 1);
+            X[k - 2] = k, X[k - 1] = k * (x - 1);
             if (x == 2) { X[k - 2] = 0, X[k - 1] = k * x; }
             for (int i = 0, j = 1; i < k - 2; i += 2, ++j) {
                 if (j == abs(X[k - 2]) || j == abs(X[k - 1])) { j++; }
