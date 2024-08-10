@@ -28,15 +28,17 @@ int main() {
             }
             Y[k - 1] = k * y;
         } else {
-            X[k - 2] = k, X[k - 1] = k * (x - 1);
+            X[k - 2] = k, X[k - 1] = k * (y - 1);
+            if (x == 2) { X[k - 2] = 0, X[k - 1] = k * x; }
             for (int i = 0, j = 1; i < k - 2; i += 2, ++j) {
-                if (j == abs(k * (x - 1)) || j == k) { j++; }
+                if (j == abs(X[k - 2]) || j == abs(X[k - 1])) { j++; }
                 X[i] = j;
                 X[i + 1] = -j;
             }
             Y[k - 2] = k, Y[k - 1] = k * (y - 1);
+            if (y == 2) { Y[k - 2] = 0, Y[k - 1] = k * y; }
             for (int i = 0, j = 1; i < k - 2; i += 2, ++j) {
-                if (j == abs(k * (y - 1)) || j == k) { j++; }
+                if (j == abs(Y[k - 2]) || j == abs(Y[k - 1])) { j++; }
                 Y[i] = j;
                 Y[i + 1] = -j;
             }
