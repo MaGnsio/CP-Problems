@@ -68,8 +68,8 @@ void update(int from, int to, int64_t start, int j = 0, int low = 0, int high = 
 int64_t query(int from, int to, int j = 0, int low = 0, int high = N - 1) {
     if (low > high) { return 0; }
     if (to < low || high < from) { return 0; }
-    push(j, low, high);
     if (from <= low && high <= to) { return T[j]; }
+    push(j, low, high);
     int mid = (low + high) / 2;
     return query(from, to, 2 * j + 1, low, mid) + query(from, to, 2 * j + 2, mid + 1, high);
 }
@@ -84,51 +84,52 @@ int main() {
         int64_t val; cin >> val;
         setp(i, val);
     }
-    function<int(int64_t)> lower_boundp = [&](int64_t val) {
-        int low = 0, high = n - 1, j = -1;
+    function<int(int64_t, int)> lower_boundp = [&](int64_t val, int i) {
+        if (i == 0) { return 0; }
+        if (query(i - 1, i - 1) < val) { return i; }
+        int low = 0, high = i - 1, k = -1;
         while (low <= high) {
             int mid = (low + high) / 2;
-            if (query(mid, mid) >= val) {
-                j = mid; high = mid - 1;
-            } else {
-                low = mid + 1;
-            }
-        }
-        assert(j != -1);
-        return j;
-    };
-    function<int(int64_t)> nupper_boundp = [&](int64_t val) {
-        int low = 0, high = n - 1, j = -1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (query(mid, mid) <= val) {
-                j = mid; low = mid + 1;
+            if (query(mid, mid) - mid < val - i + 1) {
+                k = mid; low = mid + 1;
             } else {
                 high = mid - 1;
             }
         }
-        assert(j != -1);
-        return j;
+        return k + 1;
     };
-    int Q; cin >> Q;
+    function<int(int64_t, int)> nupper_boundp = [&](int64_t val, int i) {
+        if (i == n - 1) { return n - 1; }
+        if (query(i + 1, i + 1) > val) { return i; }
+        int low = i + 1, high = n - 1, k = n;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (query(mid, mid) - mid > val - i - 1) {
+                k = mid; high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return k - 1;
+    };
     int64_t ans = 0;
+    int Q; cin >> Q;
     while (Q--) {
         int j; cin >> j; j--;
         int64_t val; cin >> val;
         int posj = query(j, j);
         if (posj == val) { continue; }
         if (posj < val) {
-            int i = nupper_boundp(val);
+            int i = nupper_boundp(val, j);
             int64_t C = i - j + 1; 
             ans += sum(val, val + C - 1) - query(j, i);
             update(j, i, val);
         } else {
-            int i = lower_boundp(val);
+            int i = lower_boundp(val, j);
             int64_t C = j - i + 1; 
             ans += query(i, j) - sum(val - C + 1, val);
             update(i, j, val - C + 1);
         }
-        assert(ans > 0);
     }
     cout << ans << "\n";
 }
