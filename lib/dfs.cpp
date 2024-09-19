@@ -1,4 +1,4 @@
-c#include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int maxN = 1e5 + 5, maxM = maxN * (maxN - 1); //those constraints are hypothetical and may not apply on the real algorithm
