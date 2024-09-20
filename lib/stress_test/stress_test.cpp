@@ -10,11 +10,16 @@ int64_t get_random(int64_t l, int64_t r) {
 
 void gen() {
     ofstream cout("in.in");
-    /**
-     *    INPUT_Example:
-     *    int n = get_random(0, 100);
-     *    cout << n << endl;
-    **/
+    int T = 1;
+    cout << T << endl;
+    while (T--) {
+        int n = get_random(3, 7);
+        cout << n << endl;
+        for (int i = 0; i < n; ++i) {
+            cout << get_random(1, 10) << " ";
+        }
+    }
+    cout << endl;
 }
 
 int main() {
