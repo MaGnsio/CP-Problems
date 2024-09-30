@@ -27,8 +27,8 @@ int solve1(int j, int mask, int want) {
     int nmask = mask | (a[j] <= 2 ? (1 << a[j]) : 0);
     if (mex(nmask) != want) {
         res = max(res, solve1(j + 1, 0, want) + 1);
-        res = max(res, solve1(j + 1, nmask, want));
-    } else if (j != n - 1) {
+    }
+    if (j != n - 1) {
         res = max(res, solve1(j + 1, nmask, want));
     }
     return res;
@@ -42,8 +42,8 @@ int solve2(int j, int mask, int want) {
     int nmask = mask | (a[j] <= 2 ? (1 << a[j]) : 0);
     if (mex(nmask) != want) {
         res = min(res, solve2(j + 1, 0, want) + 1);
-        res = min(res, solve2(j + 1, nmask, want));
-    } else if (j != n - 1) {
+    }
+    if (j != n - 1) {
         res = min(res, solve2(j + 1, nmask, want));
     }
     return res;
@@ -70,5 +70,6 @@ int main() {
             return 0;
         }
     }
-    assert(0);
+    cout << 3 << "\n";
 }
+
