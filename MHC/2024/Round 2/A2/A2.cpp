@@ -9,7 +9,7 @@ using namespace std;
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
     vector<int64_t> L, R;
-    for (int k = 1; 2 * k + 1 <= 18; ++k) {
+    for (int k = 1; 2 * k - 1 <= 18; ++k) {
         string half = "";
         function<void(int, int)> build_half = [&](int p, int d) {
             if (p == k) {
