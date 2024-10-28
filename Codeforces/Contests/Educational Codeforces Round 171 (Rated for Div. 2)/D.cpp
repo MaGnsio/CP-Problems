@@ -37,7 +37,7 @@ int main() {
         if (l > r) { return int64_t(0); }
         return c[r] - (l ? c[l - 1] : 0);
     };
-    vector<int> start(n);
+    vector<int64_t> start(n);
     for (int64_t i = 0, s = 0; i < n; ++i) {
         start[i] = s;
         s += (n - i);
