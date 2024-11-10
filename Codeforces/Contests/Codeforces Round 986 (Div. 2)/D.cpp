@@ -23,7 +23,7 @@ int main() {
                 c[i].emplace(a[i][j], j);
             }
         }
-        vector<int> par(n, -1), trader(n, -1);
+        vector<int> pcard(n, -1), trader(n, -1);
         set<int> Q, not_deleted;
         function<void(int)> delete_card = [&](int j) {
             for (int i = 0; i < 3; ++i) {
@@ -47,31 +47,33 @@ int main() {
             int card = *Q.begin(); Q.erase(Q.begin());
             delete_cards_untill(card);
             for (int i = 0; i < 3; ++i) {
-                for (auto it = c[i].begin(); it != c[i].end(); ++it) {
+                while (true) {
+                    if (c[i].empty()) { break; }
+                    auto it = c[i].begin();
                     int p = it -> first;
                     if (p > a[i][card]) { break; }
                     int new_card = it -> second;
-                    if (par[new_card] != -1) { break; }
-                    Q.insert(new_card);
-                    par[new_card] = card;
+                    if (pcard[new_card] != -1) { continue; }
+                    Q.insert(new_card); delete_card(new_card); not_deleted.erase(new_card);
+                    pcard[new_card] = card;
                     trader[new_card] = i;
                 }
             }
         }
-        if (par[n - 1] == -1) {
+        if (pcard[n - 1] == -1) {
             cout << "NO\n";
         } else {
             cout << "YES\n";
-            string s = "";
+            string t = "";
             vector<int> cards;
-            for (int c = n - 1; c != 0; c = par[c]) {
-                s += (trader[c] == 0 ? 'Q' : (trader[c] == 1 ? 'K' : 'Q'));
+            for (int c = n - 1; c != 0; c = pcard[c]) {
+                t += (trader[c] == 0 ? 'Q' : (trader[c] == 1 ? 'K' : 'J'));
                 cards.push_back(c);
             }
             int m = (int)cards.size();
             cout << m << "\n";
             for (int i = 0; i < m; ++i) {
-                cout << s[m - i - 1] << " " << cards[m - i - 1] + 1 << "\n";
+                cout << t[m - i - 1] << " " << cards[m - i - 1] + 1 << "\n";
             }
         }
     }
