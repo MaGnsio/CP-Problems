@@ -1,10 +1,3 @@
-# This repository contains problems solutions
-***
-## Resources
-* [Code Forces](https://codeforces.com/)
-* [HackerRank](https://www.hackerrank.com/)
-* [CODECHEF](https://www.codechef.com/)
-* [AtCoder](https://atcoder.jp/)
-* [LeetCode](https://leetcode.com/)
-* [CLIST](https://clist.by/)
-***
+# 🏆 MaGnsi0 / CP-Problems
+
+> my competitive programming solutions from different judges and contests.
