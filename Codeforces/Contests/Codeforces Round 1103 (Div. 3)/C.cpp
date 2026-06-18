@@ -14,10 +14,7 @@ int main() {
         function<int(int, int)> F = [&](int a, int b) {
             if (a == b) { return 0; }
             if (a > b) { swap(a, b); }
-            int ans = 100;
-            if (b - a <= 60) {
-                ans = min(ans, F(a + 1, b) + 1);
-            }
+            int ans = b - a;
             ans = min(ans, F(a, b / X) + 1);
             return ans;
         };
